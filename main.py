@@ -69,6 +69,7 @@ while True:
 
   
   print(hangman[lives])
+  lives+=1
   for i in range(len(words_guessed)):
     rnd = i
     for j in range(len(word_to_guess)):
