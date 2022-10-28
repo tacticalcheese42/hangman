@@ -1,91 +1,33 @@
-import random
+import settings
 
-#MUST be a 4 letter word 
-word_bank = [['v','e','r','y'],['k','i','n','k']]
-words_guessed = []
-answer = ['_','_','_','_']
-wrong_guesses = []
-hangman =  ['''
-    ______
-    |     |
-    |     
-    |    
-    |    
-    ---------
-    |       |
-    ---------''','''
-    ______
-    |     |
-    |     O
-    |    
-    |   
-    ---------
-    |       |
-    ---------''','''
-    ______
-    |     |
-    |     O
-    |     |
-    |    
-    ---------
-    |       |
-    ---------''','''
-    ______
-    |     |
-    |     O
-    |    /|
-    |    
-    ---------
-    |       |
-    ---------''','''
-    ______
-    |     |
-    |     O
-    |    /|\
-    |    
-    ---------
-    |       |
-    ---------''','''
-    ______
-    |     |
-    |     O
-    |    /|\
-    |    / 
-    ---------
-    |       |
-    ---------''','''
-    ______
-    |     |
-    |     O
-    |    /|\
-    |    / \
-    ---------
-    |       |
-    ---------''']
-lives = 0
-word_to_guess = random.choice(word_bank)
-place_holder = "_ "
-while True:
+while settings.running:
 
   
-  print(hangman[lives])
-  lives+=1
-  for i in range(len(words_guessed)):
+  print(settings.hangman[settings.lives])
+  for i in range(len(settings.words_guessed)):
+    
     rnd = i
-    for j in range(len(word_to_guess)):
+    for j in range(len(settings.word_to_guess)):
+      
       stop=False
-      if words_guessed[rnd] == word_to_guess[j]:
-        answer[j]=words_guessed[rnd]
-        stop = True
-      elif words_guessed[rnd] not in wrong_guesses and not stop:
-        lives+=1
-        print('    INCORRECT')
-        wrong_guesses.append(words_guessed[rnd])
+      if settings.words_guessed[rnd] == settings.word_to_guess[j]:
+        settings.answer[j]=settings.words_guessed[rnd]
+     #PROBLEMS   
+    if settings.words_guessed[rnd] not in settings.answer:
+      settings.lives+=1
+      print('    INCORRECT')
+      settings.wrong_guesses.append(settings.words_guessed[rnd]) 
+      
   print("    ",end = "",)
   for i in range(4):
-    print(answer[i],end = "")
+    
+    print(settings.answer[i],end = "")
     print(" ",end = "")
-  print('\n   ',wrong_guesses)
-  Input = input('\n\nGuess a letter:\n>>> ')
-  words_guessed.append(Input)
+    
+  print('\n   ',settings.wrong_guesses)
+  Input = input('\n\nGuess a letter:  \n(if there are no more slots to fill, press enter)\n>>> ')
+  settings.words_guessed.append(Input)
   print('\n'*7)
+  if settings.answer==settings.word_to_guess:
+    print('''YOU WON!''')
+    settings.running=False
