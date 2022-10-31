@@ -1,3 +1,36 @@
 {
-  "files": {}
+  "files": {
+    "settings.py": [
+      {
+        "id": "748db593-c369-4b28-b6c0-f8c1e0717e50",
+        "line": 73,
+        "version": 1072,
+        "index": 1125
+      },
+      {
+        "id": "b3b4c5af-638c-423b-8875-ebbeb40ab363",
+        "line": 74,
+        "version": 1072,
+        "index": 1157
+      },
+      {
+        "id": "ffd81163-5916-4e45-a456-a474d43ca719",
+        "line": 76,
+        "version": 1072,
+        "index": 1201
+      },
+      {
+        "id": "c604ea51-b6c9-464d-97a8-68c0df927e1e",
+        "line": 77,
+        "version": 1072,
+        "index": 1228
+      },
+      {
+        "id": "a3a51401-7920-40f3-a877-b99ea5a95d01",
+        "line": 79,
+        "version": 1072,
+        "index": 1261
+      }
+    ]
+  }
 }
