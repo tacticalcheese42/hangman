@@ -13,7 +13,7 @@ while settings.running:
       if settings.letters_guessed[rnd] == settings.word_to_guess[j]:
         settings.answer[j]=settings.letters_guessed[rnd]
      #checks if guess was incorrect 
-    if settings.letters_guessed[rnd] not in settings.answer:
+    if settings.letters_guessed[rnd] not in settings.answer and settings.letters_guessed[rnd] != '':
       settings.lives+=1
       if settings.lives!= 7:
         print('    INCORRECT')
