@@ -28,10 +28,10 @@ while settings.running:
     settings.running=False
     
   #prints gallows
-  if settings.lives !=7:
+  if settings.running:
     print(settings.hangman[settings.lives])
-  
     print("    ",end = "",)
+    
     #prints lines under gallows
     for i in range(len(settings.answer)):
     

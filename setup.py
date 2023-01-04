@@ -15,7 +15,8 @@ def setup(level):
     >Easy
      Medium
      Hard
-     Extreme''',    '''    HANGMAN
+     Extreme
+     Insane''',    '''    HANGMAN
     ______
     |     |
     |     O
@@ -29,7 +30,8 @@ def setup(level):
      Easy
     >Medium
      Hard
-     Extreme''',    '''    HANGMAN
+     Extreme
+     Insane''',    '''    HANGMAN
     ______
     |     |
     |     O
@@ -43,7 +45,8 @@ def setup(level):
      Easy
      Medium
     >Hard
-     Extreme''',    '''    HANGMAN
+     Extreme
+     Insane''',    '''    HANGMAN
     ______
     |     |
     |     O
@@ -57,7 +60,23 @@ def setup(level):
      Easy
      Medium
      Hard
-    >Extreme'''
+    >Extreme
+     Insane''',    '''    HANGMAN
+    ______
+    |     |
+    |     O
+    |    /|\\
+    |    / \\
+    ---------
+    |       |
+    ---------
+    select difficulty:
+    
+     Easy
+     Medium
+     Hard
+     Extreme
+    >Insane'''
   ]
   while True:
     print(start_screen[level])
@@ -65,11 +84,11 @@ def setup(level):
     print('\n'*15)
     if modifier == 's':
       level+=1
-      if level == 4:
+      if level == 5:
         level=0
     elif modifier == 'w':
       level-=1
       if level == -1:
-        level = 3
+        level = 4
     elif modifier == 'e':
       return(level)
