@@ -99,9 +99,17 @@ for i in range(len(word_to_guess)):
   else:
     answer.append('_')
 running=True
-you_won='''  ⁔ ⁔ ⁔ ⁔ ⁔ ⁔ ⁔ ⁔
+you_won='''
+
+
+
+⁔ ⁔ ⁔ ⁔ ⁔ ⁔ ⁔ ⁔
  (   YOU WON!    )
   ⁀ ⁀ ⁀ ⁀ ⁀ ⁀ ⁀ ⁀'''
-you_lost='''  ___________
+you_lost='''
+
+
+
+___________
   | You Lost |
   ‾‾‾‾‾‾‾‾‾‾‾'''

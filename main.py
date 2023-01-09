@@ -1,5 +1,5 @@
-import settings
-
+import settings, os, playsound
+#playsound.playsound('storm.mp3', False)
 while settings.running:
 
   #begins checks
@@ -16,7 +16,7 @@ while settings.running:
     if settings.letters_guessed[rnd] not in settings.answer and settings.letters_guessed[rnd] != '':
       settings.lives+=1
       if settings.lives!= 7:
-        print('    INCORRECT')
+        print("\033[31m",'    INCORRECT',"\033[0m")
       settings.wrong_guesses.append(settings.letters_guessed[rnd]) 
       settings.letters_guessed.pop(rnd)
 
@@ -34,14 +34,19 @@ while settings.running:
     
     #prints lines under gallows
     for i in range(len(settings.answer)):
-    
       print(settings.answer[i],end = "")
       print(" ",end = "")
-    
-    print('\n   ',settings.wrong_guesses)
+      
+    #prints wrong guesses
+    print('\n   ',end = "")
+    print('[',end = "")
+    for i in range(len(settings.wrong_guesses)):
+      print("\033[31m",settings.wrong_guesses[i],"\033[0m",end = "")
+    print(']')
     Input = input('\n\nGuess a letter:  \n(if there are no more slots to fill, press enter)\n>>> ')
     settings.letters_guessed.append(Input)
-    print('\n'*15)
+    os.system('clear')
+    
     #checks if you won
     if settings.answer==settings.word_to_guess:
       print(settings.you_won)
